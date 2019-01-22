@@ -27,16 +27,8 @@ Note that this example may create resources which can cost money (AWS Elastic IP
 
 | Name | Description |
 |------|-------------|
-| iam\_policy\_arn | The policy ARN to access the terraform state files bucket. |
-| iam\_policy\_id | The policy id to access the terraform state files bucket. |
-| iam\_role\_arn | The role ARN to access the terraform state files bucket. |
-| iam\_role\_id | The role id to access the terraform state files bucket. |
-| iam\_role\_unique\_id | The stable and unique string identifying the role to access the terraform state files bucket. |
-| kms\_arn | The key ARN for the S3 bucket for terraform state files. |
-| kms\_id | The key id for the S3 bucket for terraform state files. |
-| s3\_arn | The ARN of the S3 bucket for terraform state files. |
-| s3\_bucket\_domain\_name | The domain name of S3 bucket for terraform state files. |
-| s3\_id | The ID of the S3 bucket for terraform state files. |
-| s3\_region | The region of S3 bucket for terraform state files. |
+| iam\_service\_user\_access\_key | The access key of the service user. |
+| iam\_service\_user\_arn | The key ARN for the S3 bucket for terraform state files. |
+| iam\_service\_user\_secret\_key | The key ARN for the S3 bucket for terraform state files. |
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
