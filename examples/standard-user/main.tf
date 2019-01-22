@@ -9,5 +9,5 @@ module "service_user_bootstrap" {
 
   service_user_name         = "${var.region}"
   service_user_policy       = "arn:aws:iam::aws:policy/AmazonEC2FullAccess"
-  service_user_extra_policy = "arn:aws:iam::aws:policy/AmazonEC2FullAccess"
+  service_user_extra_policy = "arn:aws:iam::aws:policy/AmazonS3FullAccess"
 }
