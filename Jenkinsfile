@@ -2,5 +2,5 @@
 
 fx_terraform(
   testEnvironmentCredentialId: 'itoa-application-awscollectors-awscred',
-  terraformCommandTarget:      ['examples/standard-user', 'examples/user-with-credentials']
+  terraformCommandTargets:     ['examples/standard-user', 'examples/user-with-credentials']
 )
