@@ -7,7 +7,7 @@ provider "aws" {
 module "service_user_bootstrap" {
   source = "../../"
 
-  service_user_name         = "${var.region}"
+  service_user_name         = "tf-test"
   service_user_policy       = "arn:aws:iam::aws:policy/AmazonEC2FullAccess"
   service_user_extra_policy = "arn:aws:iam::aws:policy/AmazonS3FullAccess"
 }

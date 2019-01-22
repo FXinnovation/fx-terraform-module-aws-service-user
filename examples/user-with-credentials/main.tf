@@ -7,6 +7,6 @@ provider "aws" {
 module "service_user_bootstrap" {
   source = "../../"
 
-  service_user_name               = "${var.region}"
+  service_user_name               = "tf-test"
   create_service_user_credentials = 1
 }
