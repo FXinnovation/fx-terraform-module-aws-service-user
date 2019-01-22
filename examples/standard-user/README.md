@@ -1,6 +1,6 @@
-# Standard service user for code deployement
+# Standard service user for code deployment
 
-Configuration in this directory creates a service user to be used for terraform & other tools cloud deployements.
+Configuration in this directory creates a service user to be used for terraform & other tools cloud deployments.
 
 ## Usage
 
@@ -19,9 +19,9 @@ Note that this example may create resources which can cost money (AWS Elastic IP
 
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-----:|:-----:|
-| access\_key | Credentials: AWS access key. | string | n/a | yes |
+| access\_key | Credentials: AWS access key. | string | `"PLEASE SET THE AWS ACCESS KEY"` | no |
 | region | Region. | string | `"us-east-1"` | no |
-| secret\_key | Credentials: AWS secret key. Pass this a variable, never write password in the code. | string | n/a | yes |
+| secret\_key | Credentials: AWS secret key. Pass this a variable, never write password in the code. | string | `"PLEASE SET THE AWS SECRET KEY. DO NOT WRITE YOUR SECRET IN THIS FILE."` | no |
 
 ## Outputs
 

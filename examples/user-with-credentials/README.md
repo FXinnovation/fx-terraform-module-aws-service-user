@@ -1,6 +1,7 @@
-# Standard S3 reposiory for terraform
+# Service user with credentials for code deployment
 
-Configuration in this directory creates set of S3 resources to be used for terraform’s state files.
+Configuration in this directory creates a service user to be used for terraform & other tools cloud deployments.
+It also creates credentials along with the user.
 
 ## Usage
 
@@ -19,9 +20,9 @@ Note that this example may create resources which can cost money (AWS Elastic IP
 
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-----:|:-----:|
-| access\_key | Credentials: AWS access key. | string | n/a | yes |
+| access\_key | Credentials: AWS access key. | string | `"PLEASE SET THE AWS ACCESS KEY"` | no |
 | region | Region. | string | `"us-east-1"` | no |
-| secret\_key | Credentials: AWS secret key. Pass this a variable, never write password in the code. | string | n/a | yes |
+| secret\_key | Credentials: AWS secret key. Pass this a variable, never write password in the code. | string | `"PLEASE SET THE AWS SECRET KEY. DO NOT WRITE YOUR SECRET IN THIS FILE."` | no |
 
 ## Outputs
 
