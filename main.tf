@@ -3,13 +3,13 @@ resource "aws_iam_user" "service_user" {
 }
 
 resource "aws_iam_user_policy_attachment" "service_user_attachment" {
-  count      = "${var.service_user_policy != "" ? 1 : 0}"
+  count      = "${var.service_user_policy_count}"
   user       = "${aws_iam_user.service_user.name}"
   policy_arn = "${var.service_user_policy}"
 }
 
 resource "aws_iam_user_policy_attachment" "service_user_attachment_extra" {
-  count      = "${var.service_user_extra_policy != "" ? 1 : 0}"
+  count      = "${var.service_user_extra_policy_count}"
   user       = "${aws_iam_user.service_user.name}"
   policy_arn = "${var.service_user_extra_policy}"
 }
