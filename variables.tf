@@ -3,6 +3,11 @@ variable "service_user_name" {
   default     = "automated-deployer"
 }
 
+variable "service_user_tags" {
+  description = "Service user tags."
+  default     = {}
+}
+
 variable "service_user_policy_count" {
   description = "Whether or not attach an policy to the service user."
   default     = "1"

@@ -1,5 +1,7 @@
 resource "aws_iam_user" "service_user" {
   name = "${var.service_user_name}"
+
+  tags = "${merge(map('Terraform', 'true'), var.service_user_tags)}"
 }
 
 resource "aws_iam_user_policy_attachment" "service_user_attachment" {
