@@ -1,14 +1,25 @@
-output "iam_service_user_arn" {
-  description = "The key ARN for the S3 bucket for terraform state files."
-  value       = "${module.service_user_bootstrap.iam_service_user_arn}"
+output "arn" {
+  description = "The ARN assigned by AWS for the service user."
+  value       = "${module.standard_user.arn}"
 }
 
-output "iam_service_user_access_key" {
+output "access_key" {
   description = "The access key of the service user."
-  value       = "${module.service_user_bootstrap.iam_service_user_access_key}"
+  value       = "${module.standard_user.access_key}"
 }
 
-output "iam_service_user_secret_key" {
-  description = "The key ARN for the S3 bucket for terraform state files."
-  value       = "${module.service_user_bootstrap.iam_service_user_secret_key}"
+output "policies_count" {
+  description = "Count of policies attached to the service user."
+  value       = "${length(var.policies)}"
+}
+
+output "secret_key" {
+  description = "The secret key of the service user. CAUTION: this value will appear in the state file: this is probably not what you want."
+  value       = "${module.standard_user.secret_key}"
+  sensitive   = true
+}
+
+output "unique_id" {
+  description = "The unique ID assigned by AWS."
+  value       = "${module.standard_user.unique_id}"
 }

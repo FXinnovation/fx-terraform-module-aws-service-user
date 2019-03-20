@@ -19,16 +19,18 @@ Note that this example may create resources which can cost money (AWS Elastic IP
 
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-----:|:-----:|
-| access\_key | Credentials: AWS access key. | string | `"PLEASE SET THE AWS ACCESS KEY"` | no |
+| access\_key | Credentials: AWS access key. | string | n/a | yes |
 | region | Region. | string | `"us-east-1"` | no |
-| secret\_key | Credentials: AWS secret key. Pass this a variable, never write password in the code. | string | `"PLEASE SET THE AWS SECRET KEY. DO NOT WRITE YOUR SECRET IN THIS FILE."` | no |
+| secret\_key | Credentials: AWS secret key. Pass this a variable, never write password in the code. | string | n/a | yes |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
-| iam\_service\_user\_access\_key | The access key of the service user. |
-| iam\_service\_user\_arn | The key ARN for the S3 bucket for terraform state files. |
-| iam\_service\_user\_secret\_key | The key ARN for the S3 bucket for terraform state files. |
+| access\_key | The access key of the service user. |
+| arn | The ARN assigned by AWS for the service user. |
+| policies\_count | Count of policies attached to the service user. |
+| secret\_key | The secret key of the service user. CAUTION: this value will appear in the state file: this is probably not what you want. |
+| unique\_id | The unique ID assigned by AWS. |
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->

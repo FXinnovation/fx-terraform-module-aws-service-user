@@ -4,14 +4,11 @@ provider "aws" {
   secret_key = "${var.secret_key}"
 }
 
-module "service_user_bootstrap" {
+module "standard_user" {
   source = "../../"
 
-  service_user_name               = "tf-test"
-  service_user_policy             = "arn:aws:iam::aws:policy/AmazonEC2FullAccess"
-  service_user_policy_count       = "1"
-  service_user_extra_policy       = "arn:aws:iam::aws:policy/AmazonS3FullAccess"
-  service_user_extra_policy_count = "1"
+  name     = "tf-test"
+  policies = ["arn:aws:iam::aws:policy/AmazonEC2FullAccess", "arn:aws:iam::aws:policy/AmazonS3FullAccess"]
 
   service_user_tags = {
     Test = "test"

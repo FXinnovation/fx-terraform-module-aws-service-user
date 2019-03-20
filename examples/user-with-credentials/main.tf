@@ -4,9 +4,9 @@ provider "aws" {
   secret_key = "${var.secret_key}"
 }
 
-module "service_user_bootstrap" {
+module "user_with_credentials" {
   source = "../../"
 
-  service_user_name               = "tf-test"
-  create_service_user_credentials = 1
+  name               = "tf-test"
+  credentials_create = 1
 }
