@@ -10,7 +10,7 @@ module "standard_user" {
   name        = "tf-test"
   policy_arns = ["arn:aws:iam::aws:policy/AmazonEC2FullAccess", "arn:aws:iam::aws:policy/AmazonS3FullAccess"]
 
-  service_user_tags = {
+  tags = {
     Test = "test"
   }
 }
