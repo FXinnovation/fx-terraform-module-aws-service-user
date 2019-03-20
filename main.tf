@@ -1,22 +1,18 @@
-resource "aws_iam_user" "service_user" {
+resource "aws_iam_user" "this" {
   name = "${var.service_user_name}"
 
-  tags = "${merge(map("Terraform", "true"), var.service_user_tags)}"
+  tags = "${merge(map("terraform", "true"), var.service_user_tags)}"
 }
 
-resource "aws_iam_user_policy_attachment" "service_user_attachment" {
-  count      = "${var.service_user_policy_count}"
+resource "aws_iam_user_policy_attachment" "this" {
+  count = "${length(var.policies)}"
+
   user       = "${aws_iam_user.service_user.name}"
-  policy_arn = "${var.service_user_policy}"
+  policy_arn = "${element(var.policies, count.index)}"
 }
 
-resource "aws_iam_user_policy_attachment" "service_user_attachment_extra" {
-  count      = "${var.service_user_extra_policy_count}"
-  user       = "${aws_iam_user.service_user.name}"
-  policy_arn = "${var.service_user_extra_policy}"
-}
+resource "aws_iam_access_key" "this" {
+  count = "${var.user_credentials_create ? 1 : 0}"
 
-resource "aws_iam_access_key" "service_user" {
-  count = "${var.create_service_user_credentials > 0 ? 1 : 0}"
-  user  = "${aws_iam_user.service_user.name}"
+  user = "${aws_iam_user.service_user.name}"
 }

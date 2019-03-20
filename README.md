@@ -15,20 +15,19 @@ For more information: https://github.com/hashicorp/terraform/issues/12466
 
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-----:|:-----:|
-| create\_service\_user\_credentials | Whether to create service credentials or not. CAUTION: enabling this means the secret will be displayed in cleartext in the state file. | string | `"0"` | no |
-| service\_user\_extra\_policy | Extra policy to attach to service user. This policy should give just the needed access for the service user to administrate your cloud. | string | `""` | no |
-| service\_user\_extra\_policy\_count | Whether or not attach an extra policy to the service user. | string | `"0"` | no |
-| service\_user\_name | Service user name. | string | `"automated-deployer"` | no |
-| service\_user\_policy | Policy to attach to service user. This policy should give just the needed access for the service user to administrate your cloud. | string | `"arn:aws:iam::aws:policy/AdministratorAccess"` | no |
-| service\_user\_policy\_count | Whether or not attach an policy to the service user. | string | `"1"` | no |
-| service\_user\_tags | Service user tags. | map | `{}` | no |
+| credentials\_create | Whether to create service credentials or not. CAUTION: enabling this means the secret will be displayed in cleartext in the state file. | string | `"false"` | no |
+| name | Service user name. | string | n/a | yes |
+| policies | Policy to attach to service user. This policy should give just the needed access for the service user to administrate your cloud. | list | `[ "arn:aws:iam::aws:policy/AdministratorAccess" ]` | no |
+| tags | Service user tags. | map | `{}` | no |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
-| iam\_service\_user\_access\_key | The access key of the service user. |
-| iam\_service\_user\_arn | The key ARN for the S3 bucket for terraform state files. |
-| iam\_service\_user\_secret\_key | The key ARN for the S3 bucket for terraform state files. |
+| access\_key | The access key of the service user. |
+| arn | The ARN assigned by AWS for the service user. |
+| policies\_count | Count of policies attached to the service user. |
+| secret\_key | The secret key of the service user. CAUTION: this value will appear in the state file: this is probably not what you want. |
+| unique\_id | The unique ID assigned by AWS. |
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
