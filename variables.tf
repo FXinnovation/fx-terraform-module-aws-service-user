@@ -8,7 +8,7 @@ variable "name" {
   type        = "string"
 }
 
-variable "policies" {
+variable "policy_arns" {
   description = "Policy to attach to service user. This policy should give just the needed access for the service user to administrate your cloud."
   default     = ["arn:aws:iam::aws:policy/AdministratorAccess"]
 }

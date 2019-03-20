@@ -10,7 +10,7 @@ output "access_key" {
 
 output "policies_count" {
   description = "Count of policies attached to the service user."
-  value       = "${length(var.policies)}"
+  value       = "${length(var.policy_arns)}"
 }
 
 output "secret_key" {

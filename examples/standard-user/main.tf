@@ -7,8 +7,8 @@ provider "aws" {
 module "standard_user" {
   source = "../../"
 
-  name     = "tf-test"
-  policies = ["arn:aws:iam::aws:policy/AmazonEC2FullAccess", "arn:aws:iam::aws:policy/AmazonS3FullAccess"]
+  name        = "tf-test"
+  policy_arns = ["arn:aws:iam::aws:policy/AmazonEC2FullAccess", "arn:aws:iam::aws:policy/AmazonS3FullAccess"]
 
   service_user_tags = {
     Test = "test"

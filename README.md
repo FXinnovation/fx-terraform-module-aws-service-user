@@ -17,7 +17,7 @@ For more information: https://github.com/hashicorp/terraform/issues/12466
 |------|-------------|:----:|:-----:|:-----:|
 | credentials\_create | Whether to create service credentials or not. CAUTION: enabling this means the secret will be displayed in cleartext in the state file. | string | `"false"` | no |
 | name | Service user name. | string | n/a | yes |
-| policies | Policy to attach to service user. This policy should give just the needed access for the service user to administrate your cloud. | list | `[ "arn:aws:iam::aws:policy/AdministratorAccess" ]` | no |
+| policy\_arns | Policy to attach to service user. This policy should give just the needed access for the service user to administrate your cloud. | list | `[ "arn:aws:iam::aws:policy/AdministratorAccess" ]` | no |
 | tags | Service user tags. | map | `{}` | no |
 
 ## Outputs

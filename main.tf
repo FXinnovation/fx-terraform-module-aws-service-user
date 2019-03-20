@@ -5,10 +5,10 @@ resource "aws_iam_user" "this" {
 }
 
 resource "aws_iam_user_policy_attachment" "this" {
-  count = "${length(var.policies)}"
+  count = "${length(var.policy_arns)}"
 
   user       = "${aws_iam_user.service_user.name}"
-  policy_arn = "${element(var.policies, count.index)}"
+  policy_arn = "${element(var.policy_arns, count.index)}"
 }
 
 resource "aws_iam_access_key" "this" {
