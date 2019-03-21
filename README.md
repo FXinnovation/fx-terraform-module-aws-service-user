@@ -4,11 +4,6 @@ Bootstrap terraform AWS service user.
 
 This module should be used in a client-specific bootstrap terraform module.
 
-## Notes
-
-* Due to multiple layer of interpolation, terraform (as for 0.11.* versions) is not able to handle dynamic counts.
-This means this module ask for extra variables static counts values; which is duplicated information.
-For more information: https://github.com/hashicorp/terraform/issues/12466
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Inputs
