@@ -1,5 +1,5 @@
 variable "region" {
-  description = "Region."
+  description = "Region: https://docs.aws.amazon.com/general/latest/gr/rande.html."
   default     = "us-east-1"
 }
 
