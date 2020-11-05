@@ -5,7 +5,7 @@ variable "credentials_create" {
 
 variable "name" {
   description = "Service user name."
-  type        = "string"
+  type        = string
 }
 
 variable "policy_arns" {
