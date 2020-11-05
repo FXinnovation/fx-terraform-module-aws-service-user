@@ -42,5 +42,10 @@ No requirements.
 | policies\_count | Count of policies attached to the service user. |
 | secret\_key | The secret key of the service user. CAUTION: this value will appear in the state file: this is probably not what you want. |
 | unique\_id | The unique ID assigned by AWS. |
+| withcreds\_access\_key | The access key of the service user. |
+| withcreds\_arn | The ARN assigned by AWS for the service user. |
+| withcreds\_policies\_count | Count of policies attached to the service user. |
+| withcreds\_secret\_key | The secret key of the service user. CAUTION: this value will appear in the state file: this is probably not what you want. |
+| withcreds\_unique\_id | The unique ID assigned by AWS. |
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->

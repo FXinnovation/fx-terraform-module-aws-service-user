@@ -1,10 +1,4 @@
-provider "aws" {
-  region     = "${var.region}"
-  access_key = "${var.access_key}"
-  secret_key = "${var.secret_key}"
-}
-
-resource "random_string" "this" {
+resource "random_string" "standard_user" {
   length  = 3
   upper   = false
   special = false
@@ -13,7 +7,7 @@ resource "random_string" "this" {
 module "standard_user" {
   source = "../../"
 
-  name        = "${format("%stf-test", random_string.this.result)}"
+  name        = "${format("%stf-test", random_string.standard_user.result)}"
   policy_arns = ["arn:aws:iam::aws:policy/AmazonEC2FullAccess", "arn:aws:iam::aws:policy/AmazonS3FullAccess"]
 
   tags = {
