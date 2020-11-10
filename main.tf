@@ -3,7 +3,8 @@ resource "aws_iam_user" "this" {
 
   tags = merge(
     {
-      "terraform" = "true"
+      "terraform"  = "true"
+      "managed-by" = "terraform"
     },
     var.tags,
   )
